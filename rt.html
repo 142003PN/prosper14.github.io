@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<?php
+    include("data.php");
+
+    $sql = "SELECT * FROM personal";
+    $result = mysqli_query($conn, $sql);
+
+    if(mysqli_num_rows($result)>0){
+        while ($row = mysqli_fetch_assoc($result)) {
+            # cod
+            echo $row["ID"]. '<br>';
+            echo $row["Name"]. '<br>';
+            echo $row["Phone"]. '<br>';
+            echo $row["Email"]. '<br>';
+            echo $row["Date"]. '<br>';
+            echo $row["Place"]. '<br>';
+?>
+</body>
+</html>

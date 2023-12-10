@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <?php
+    require_once 'data.php';
+    include("header.html");
+?>
+
+</head>
+<body>
+    <h4>Enter your details</h4>
+    <form action="register.php" method="post">
+        Name: <br>
+        <input type="text" name="name" required><br>
+        Phone: <br>
+        <input type="text" name="phone" required><br>
+        Email: <br>
+        <input type="email" name="email" required><br>
+        Place of Birth: <br>
+        <input type="text" name="placeofbirth" required><br>
+        <input type="submit" name="submit" value="submit">
+    </form>
+    
+    <?php
+    
+
+    if (isset($_POST["submit"])) {
+
+        $name= $_POST["name"];
+        $phone = $_POST["phone"];
+        $email = $_POST["email"];
+        $placeofbirth = $_POST["placeofbirth"]; 
+
+        $query = "INSERT INTO personal(Name, Phone, Email, Place ) VALUES" .
+ "('$name', '$phone', '$email', '$placeofbirth')";
+
+ try{
+    $result = $conn->query($query);
+    echo "{$name} has been successfully registered";
+
+ }
+catch(mysqli_sql_exception){
+    echo "email exists!!";
+}}
+
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+echo "<br>";
+
+include("footer.html");
+?>
+</body>
+</html>
+
+

@@ -1,0 +1,11 @@
+
+img{height: 250px; width: 250px;
+       animation-name: slideup;
+       animation-duration: 10s; 
+    }
+@keyframes slideup{
+        from{transform: translateY(300%);}
+}
+.js{
+    color: rgb(60, 148, 9);
+}
